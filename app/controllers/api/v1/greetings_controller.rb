@@ -1,11 +1,9 @@
-# frozen_string_literal: true
-
 module Api
   module V1
     class GreetingsController < ApplicationController
       def index
-        @greetings = Greeting.all.sample.greeting
-        render json: { greeting: @greetings }
+        greetings = Greeting.all
+        render json: greetings[rand(greetings.length - 1)]
       end
     end
   end

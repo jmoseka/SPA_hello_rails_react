@@ -1,14 +1,18 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from "./Greeting.js";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux'
+import Greeting from './Greeting';
+import store from '../store/createStore';
 
 const App = () => {
     return (
+      <Provider store={store}>
         <BrowserRouter>
-            <Routes>
-                <Route exact path="/" element={<Greeting />} />
-            </Routes>
-      </BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Greeting  />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     );
 }
 

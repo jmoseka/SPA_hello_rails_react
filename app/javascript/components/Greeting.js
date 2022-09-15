@@ -5,7 +5,7 @@ import { getGreetingAsync } from '../store/greetingReducer';
 
 const Greeting = () => {
   const dispatch = useDispatch();
-  const {loading, error, greet } = useSelector((state) => state.greeting)
+  const { greet } = useSelector((state) => state.greeting)
 
   useEffect(() => {
     dispatch(getGreetingAsync())
@@ -18,7 +18,7 @@ const Greeting = () => {
     return (
       <div className="div">
         <h1>{greet}</h1>
-        <button onClick={handleGreeting}>Get Greeting</button>
+        <button onClick={handleGreeting}>Greeting</button>
       </div>
     );
 }
